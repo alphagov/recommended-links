@@ -1,0 +1,35 @@
+GIT
+  remote: git@github.com:alphagov/rummageable.git
+  revision: e66b12f47dadd466db2d8407628b31b7f29e8054
+  specs:
+    rummageable (0.1.0)
+      json
+      plek
+      rest-client
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ansi (1.4.1)
+    builder (3.0.0)
+    json (1.6.3)
+    mime-types (1.17.2)
+    plek (0.1.11)
+      builder
+    rake (0.9.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    shoulda (2.11.3)
+    test-unit (2.4.3)
+    turn (0.8.3)
+      ansi
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rake (= 0.9.2)
+  rummageable!
+  shoulda (~> 2.11.3)
+  test-unit
+  turn
