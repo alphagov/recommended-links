@@ -1,7 +1,6 @@
 require "test/unit"
-%w[ . lib ].each do |path|
-  $:.unshift path unless $:.include?(path)
-end
+require 'mocha'
+
 # 
 # require "simplecov"
 # require "simplecov-rcov"
