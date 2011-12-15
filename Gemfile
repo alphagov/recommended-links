@@ -3,8 +3,6 @@ source 'http://rubygems.org'
 gem 'rummageable', :git => 'git@github.com:alphagov/rummageable.git'
 gem 'rake', '0.9.2'
 
-gem 'logger'
-
 group :debug do
   gem 'ruby-debug19'
 end
