@@ -1,4 +1,5 @@
 require_relative "recommended_link"
+require 'rummageable'
 
 module RecommendedLinks
   class Indexer
