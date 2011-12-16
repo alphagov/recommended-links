@@ -2,9 +2,15 @@ require_relative "../recommended_links/indexer"
 require_relative "../recommended_links/parser"
 
 namespace :rummager do
+  def data_file(filename)
+    File.expand_path("../../data/#{filename}", File.dirname(__FILE__))
+  end
+  
   desc "Reindex search engine"
   task :index do
-    parser = RecommendedLinks::Parser.new(File.expand_path("../../data/recommended-links.csv", File.dirname(__FILE__)))
-    RecommendedLinks::Indexer.new.index(parser.recommended_links)
+    recommended_links = RecommendedLinks::Parser.new(data_file("recommended-links.csv")).recommended_links
+    RecommendedLinks::Indexer.new.index(recommended_links)
+    deleted_links = RecommendedLinks::DeletedLinksParser.new(data_file("deleted-links.txt"))
+    RecommendedLinks::Indexer.new.remove(deleted_links)
   end
 end

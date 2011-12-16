@@ -14,7 +14,13 @@ module RecommendedLinks
         "format" => "recommended-link",
         "link" => recommended_link.url,
         "indexable_content" => recommended_link.match_phrases.join(" ")
-      }      
+      }
+    end
+    
+    def remove(deleted_links)
+      deleted_links.each do |deleted_link|
+        Rummageable.delete(deleted_link)
+      end
     end
   end
 end
