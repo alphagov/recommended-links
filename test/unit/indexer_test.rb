@@ -16,7 +16,7 @@ module RecommendedLinks
           "description" => recommended_link.description,
           "format" => "recommended-link",
           "link" => recommended_link.url,
-          "indexable_content" => recommended_link.match_phrases.join(" ")
+          "indexable_content" => recommended_link.match_phrases.join(", ")
         }]
       )
       
