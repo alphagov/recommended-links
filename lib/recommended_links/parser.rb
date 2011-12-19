@@ -39,6 +39,26 @@ module RecommendedLinks
     def parse_match_phrases(raw_match_phrases)
       raw_match_phrases.split(",").map { |phrase| phrase.strip }.reject { |phrase| phrase.size == 0}
     end
+  end
   
+  class DeletedLinksParser
+    def initialize(filename)
+      @filename = filename
+    end
+
+    def deleted_links
+      deleted_links = []
+      File.open(@filename, "r") do |file|
+        while (line = file.gets)
+          next if comment?(line)
+          deleted_links << line
+        end
+      end
+      deleted_links
+    end
+    
+    def comment?(line)
+      line =~ /^ *#/
+    end
   end
 end

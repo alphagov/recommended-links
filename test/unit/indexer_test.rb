@@ -36,5 +36,16 @@ module RecommendedLinks
       
       Indexer.new.index(recommended_links)
     end
+    
+    test "Can remove links" do
+      deleted = ["http://delete.me/1", "http://delete.me/2"]
+
+      s = sequence('deletion')
+      Rummageable.expects(:delete).with(deleted[0]).in_sequence(s)
+      Rummageable.expects(:delete).with(deleted[1]).in_sequence(s)
+      
+      Indexer.new.remove(deleted)
+    end
+    
   end
 end
