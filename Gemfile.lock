@@ -21,7 +21,7 @@ GEM
     mime-types (1.17.2)
     mocha (0.10.0)
       metaclass (~> 0.0.1)
-    plek (0.1.11)
+    plek (0.1.13)
       builder
     rake (0.9.2)
     rest-client (1.6.7)
