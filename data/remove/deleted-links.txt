@@ -1,5 +1,4 @@
 # This file should contain a list of urls, each of them will be
 # removed from the solr index.
-# 
-# e.g.
-# http://not.needed/any/more
+link
+http://not.needed/any/more

@@ -12,11 +12,11 @@ namespace :rummager do
     deleted_links = []
 
     Dir[File.join(data_path, "index", "*.csv")].each do |f|
-      recommended_links += RecommendedLinks::Parser.new(f).recommended_links
+      recommended_links += RecommendedLinks::Parser.new(f).links
     end
 
     Dir[File.join(data_path, "delete", "*.csv")].each do |f|
-      deleted_links += RecommendedLinks::DeletedLinksParser.new(f).deleted_links
+      deleted_links += RecommendedLinks::DeletedLinksParser.new(f).links
     end
 
     indexer = RecommendedLinks::Indexer.new

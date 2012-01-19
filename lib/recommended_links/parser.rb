@@ -5,60 +5,43 @@ module RecommendedLinks
   class Parser
     def initialize(filename)
       @filename = filename
-      @state = :initial
-      @recommended_links = []
+      @headers = nil
     end
 
-    def recommended_links
-      CSV.foreach(@filename) { |row| parse_row(row) }
-      @recommended_links
-    end
-
-    def parse_row(row)
-      self.send(:"parse_#{@state}_row", row)
-    end
-  
-    def parse_initial_row(row)
-      if header_row?(row)
-        @header = row
-        @state = :body
-      end
-    end
-  
-    def header_row?(row)
-      row.reject {|cell| cell.strip.size == 0}.size >= 4
-    end
-  
-    def parse_body_row(row)
-      need_id, title, description, url, raw_match_phrases = row
-    
-      @recommended_links << 
-        RecommendedLink.new(title, description, url, parse_match_phrases(raw_match_phrases))
-    end
-  
-    def parse_match_phrases(raw_match_phrases)
-      raw_match_phrases.split(",").map { |phrase| phrase.strip }.reject { |phrase| phrase.size == 0}
-    end
-  end
-  
-  class DeletedLinksParser
-    def initialize(filename)
-      @filename = filename
-    end
-
-    def deleted_links
-      deleted_links = []
-      File.open(@filename, "r") do |file|
-        while (line = file.gets)
-          next if comment?(line)
-          deleted_links << line
+    def links
+      return @links if @links
+      @links = []
+      CSV.foreach(@filename) do |row|
+        next if row.empty? || comment?(row.first)
+        if @headers
+          parse_row Hash[@headers.zip(row)]
+        else
+          @headers = row.map(&:downcase)
         end
       end
-      deleted_links
+      @links
     end
-    
+
+  private
+    def parse_row(h)
+      @links << RecommendedLink.new(
+        h["title"], h["text"], h["link"],
+        parse_match_phrases(h["keywords"])
+      )
+    end
+
+    def parse_match_phrases(raw_match_phrases)
+      raw_match_phrases.to_s.split(",").map(&:strip).reject(&:empty?)
+    end
+
     def comment?(line)
       line =~ /^ *#/
+    end
+  end
+
+  class DeletedLinksParser < Parser
+    def parse_row(h)
+      @links << h["link"]
     end
   end
 end
