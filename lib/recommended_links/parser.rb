@@ -6,6 +6,7 @@ module RecommendedLinks
     def initialize(filename)
       @filename = filename
       @headers = nil
+      @links = nil
     end
 
     def links

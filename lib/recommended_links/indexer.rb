@@ -4,7 +4,7 @@ require 'rummageable'
 module RecommendedLinks
   class Indexer
     def index(recommended_links)
-      Rummageable.index([*recommended_links].map { |l| for_indexing(l) })
+      Rummageable.index(recommended_links.map { |l| for_indexing(l) })
     end
     
     def for_indexing(recommended_link)

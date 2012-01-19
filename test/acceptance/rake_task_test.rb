@@ -1,25 +1,22 @@
 require_relative "../test_helper"
-require 'rake'
+require "recommended_links/indexing_task"
 
 module RecommendedLinks
   class RakeTaskTest < Test::Unit::TestCase
-    def setup
-      Rake.application = Rake::Application.new
-      load File.dirname(__FILE__) + '/../../lib/tasks/index.rake'
-    end
-    
     test "rake rummager:index parses" do
       indexer = stub_everything("Indexer")
-      RecommendedLinks::Indexer.stubs(:new).returns(indexer)
-      recommended_links_parser = stub("Recommended links parser", recommended_links: [])
-      RecommendedLinks::Parser.expects(:new).with(regexp_matches /recommended-links.csv$/).returns(recommended_links_parser)
-      deleted_links_parser = stub("Deleted links parser", deleted_links: ["http://delete.me"])
-      RecommendedLinks::DeletedLinksParser.expects(:new).with(regexp_matches /deleted-links.txt$/).returns(deleted_links_parser)
 
-      indexer.expects(:index).with(recommended_links_parser.recommended_links)
-      indexer.expects(:remove).with(deleted_links_parser.deleted_links)
+      recommended_link = RecommendedLink.new(
+        "Care homes",
+        "Find a care home and other residential housing on the NHS Choices website",
+        "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx",
+        ["care homes", "old people's homes", "nursing homes", "sheltered housing"]
+      )
+      indexer.expects(:index).with([recommended_link])
+      indexer.expects(:remove).with(["http://delete.me/some/page.html"])
 
-      Rake.application["rummager:index"].invoke
+      data_path = File.expand_path("../../fixtures/data", __FILE__)
+      IndexingTask.new(data_path).run(indexer)
     end
     
     def teardown

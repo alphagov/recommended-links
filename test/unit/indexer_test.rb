@@ -20,7 +20,7 @@ module RecommendedLinks
         }]
       )
       
-      Indexer.new.index(recommended_link)
+      Indexer.new.index([recommended_link])
     end
     
     test "Indexing multiple recommended links adds them all using rummager" do
