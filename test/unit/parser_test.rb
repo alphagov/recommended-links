@@ -6,6 +6,10 @@ module RecommendedLinks
     def csv_fixture_file
       File.expand_path("../fixtures/data/index/sample.csv", File.dirname(__FILE__))
     end
+
+    def csv_real_file
+      File.expand_path("../../data/index/internal_search_results.csv", File.dirname(__FILE__))
+    end
     
     def deleted_links_fixture_file
       File.expand_path("../fixtures/data/remove/deleted.csv", File.dirname(__FILE__))
@@ -25,6 +29,10 @@ module RecommendedLinks
       deleted_links = DeletedLinksParser.new(deleted_links_fixture_file).links
       
       assert_equal ['http://delete.me/some/page.html'], deleted_links
+    end
+
+    test "Can parse the included data file" do
+      recommended_links = Parser.new(csv_real_file).links
     end
     
   end
