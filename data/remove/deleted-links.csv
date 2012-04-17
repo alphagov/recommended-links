@@ -1,4 +1,5 @@
-# This file should contain a list of urls, each of them will be
-# removed from the solr index.
+# This file contains a list of urls; each of them will be removed from Solr.
 link
-http://not.needed/any/more
+https://nextstep.direct.gov.uk/
+https://nextstep.direct.gov.uk/gettingajob/cvsandcoveringletters/Pages/default.aspx
+http://www.whatdotheyknow.com/
