@@ -18,7 +18,7 @@ module RecommendedLinks
       data_path = File.expand_path("../../fixtures/data", __FILE__)
       IndexingTask.new(data_path).run(indexer)
     end
-    
+
     def teardown
       Rake.application = nil
     end
