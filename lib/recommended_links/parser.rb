@@ -12,7 +12,7 @@ module RecommendedLinks
     def links
       return @links if @links
       @links = []
-      CSV.foreach(@filename) do |row|
+      CSV.foreach(@filename, encoding: "UTF-8") do |row|
         next if row.empty? || comment?(row.first)
         if @headers
           parse_row Hash[@headers.zip(row)]
