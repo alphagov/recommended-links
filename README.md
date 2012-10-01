@@ -9,7 +9,7 @@ be part of the single domain.
 For this content, we'll detect searches for particular terms and show a
 recommended link at the top of the search results.
 
-Example: 
+Example:
 
 Search for: care homes
 
@@ -20,3 +20,13 @@ Care homes
 ----------
 Find a care home and other residential housing on the NHS Choices website
   -> http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx
+
+
+Surfacing recommended links in Rummager
+=======================================
+
+Check out this repository and run
+
+    rake rummager:index
+
+to index all the recommended links in Rummager.
