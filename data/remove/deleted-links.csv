@@ -1,5 +1,34 @@
-# This file contains a list of urls; each of them will be removed from Solr.
+# This file contains a list of urls; each of them will be removed from search.
 link
+http://openlylocal.com/
+http://rnli.org/findmynearest/Pages/default.aspx
+http://search2.hmrc.gov.uk/kb5/hmrc/contactus/home.page
+http://www.adviceguide.org.uk/england/consumer_e.htm
+http://www.adviceguide.org.uk/nireland/consumer_ni.htm
+http://www.adviceguide.org.uk/scotland/consumer_s.htm
+http://www.adviceguide.org.uk/wales/consumer_w.htm
+http://www.businesslink.gov.uk/
+http://www.businesslink.gov.uk/bdotg/action/detail?itemId=1084193797&amp;type=PIP
+http://www.businesslink.gov.uk/bdotg/action/layer?r.s=tl&topicId=1073858805
+http://www.caa.co.uk/default.aspx?catid=132&pagetype=90&pageid=145
+http://www.direct.gov.uk/en/Diol1/DoItOnline/DG_179755
+http://www.direct.gov.uk/en/Dl1/Directories/UsefulContactsByCategory/index.htm
+http://www.direct.gov.uk/en/Employment/Jobseekers/programmesandservices/DG_197781
+http://www.direct.gov.uk/en/MoneyTaxAndBenefits/Taxes/BeginnersGuideToTax/IncomeTax/Taxrefundsreclaimingtax/index.htm
+http://www.direct.gov.uk/en/Nl1/Newsroom/Budget/Budget2012
+http://www.direct.gov.uk/en/Pensionsandretirementplanning/Benefits/BenefitsInRetirement/DG_185940
+http://www.direct.gov.uk/en/index.htm
+http://www.hmrc.gov.uk/ct/index.htm
+http://www.mod.uk/DefenceInternet/DefenceFor/Veterans/Medals/
+http://www.nhs.uk
+http://www.nhs.uk/Livewell/counselling/Pages/Counsellinghome.aspx
+http://www.nhs.uk/conditions/pandemic-flu/Pages/Introduction.aspx
+http://www.nhs.uk/servicedirectories/Pages/ServiceSearch.aspx?ServiceType=GP
+http://www.nhsdirect.nhs.uk
+http://www.nsandi.com/savings-childrens-bonus-bonds
+http://www.ucas.com/
+http://www.whatdotheyknow.com/
+https://nationalcareersservice.direct.gov.uk/advice/courses/Pages/default.aspx
+https://nationalcareersservice.direct.gov.uk/advice/getajob/cvs/Pages/default.aspx
 https://nextstep.direct.gov.uk/
 https://nextstep.direct.gov.uk/gettingajob/cvsandcoveringletters/Pages/default.aspx
-http://www.whatdotheyknow.com/
