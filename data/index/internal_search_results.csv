@@ -12,6 +12,7 @@ add,Basic PAYE Tools - HMRC,Basic PAYE Tools is a computer software package prov
 1890,HomeBuy,Find the HomeBuy agent in the area you want to live,http://www.homebuy.co.uk/,homebuy
 add,Technology Strategy Board,The UK's innovation agency aims to accelerate economic growth by stimulating and supporting business-led innovation,http://www.innovateuk.org/,"tsb, technology strategy, technology strategy board, innovate, innovation, design, creative"
 794,Motability,"Get a car, powered wheelchair or scooter at an affordable price through the Motability scheme",http://www.motability.co.uk/,motability
+add,Census records - The National Archives,How to research census records from 1841 to 1911,http://www.nationalarchives.gov.uk/records/looking-for-person/recordscensus.htm,"census, family history, genealogy"
 add,NHS Choices,"Information from the National Health Service on conditions, treatments, local services and healthy living",http://www.nhs.uk/,"nhs, health"
 431,Carers' assessments - NHS Choices,Find out how to get a carer's assessment,http://www.nhs.uk/CarersDirect/guide/assessments/Pages/Carersassessments.aspx,"carers assessment, carer's assessment"
 1558,Care homes - NHS Choices,Find a care home and other residential housing,http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx,"care homes, old people's homes, nursing homes, sheltered housing"
@@ -23,6 +24,7 @@ add,Health services near you - NHS Choices,"Enter your postcode or location to f
 add,NHS Direct,NHS Direct provides a 24-hour nurse advice and health information telephone service on 0845 4647,http://www.nhsdirect.nhs.uk/,"nhs, health"
 998,National Savings and Investments - NS&I,Invest with the government's savings scheme on the National Savings and Investments (NS&I) website,http://www.nsandi.com/,"ns&i, nsandi, national savings and investments"
 972,Premium Bonds - NS&I,Buy Premium Bonds on the National Savings and Investments (NS&I) website,http://www.nsandi.com/savings-premium-bonds,"premium bonds, premium bond numbers, ns&i, national savings and investments"
+add,2011 Census - Office for National Statistics,Information about the 2011 Census from the Office for National Statistics,http://www.ons.gov.uk/census,"census, ons"
 add,Find local councillors - Openly Local,Openly Local is a new project providing easier access to local government information (not all councils are listed yet),http://www.openlylocal.com/,councillor
 766,Find your local policing team - Police UK,Find details of your local policing team on the Police UK website,http://www.police.uk/,"local police, neighbourhood police"
 165,Crime in your area - Police UK,Get crime maps and statistics for your area,http://www.police.uk/,"crime, crime maps, crime statistics"
@@ -44,3 +46,4 @@ add,GDS design principles,The Government Digital Service (GDS) has published a s
 add,GDS style guide,The Government Digital Service (GDS) has published its style guide for written content on the GOV.UK website,https://www.gov.uk/designprinciples/styleguide,"style guide, style guidelines, content principles, editorial guidelines"
 add,GOV.UK APIs,How developers can use GOV.UK's content and data through APIs (application programming interfaces),https://www.gov.uk/support/apis,"api, apis"
 add,Money Advice Service,"Free, unbiased, independent advice and tools to help you manage your money better",https://www.moneyadviceservice.org.uk/,"money advice, financial advice, finances, ma, mas"
+add,Reclaiming mis-sold PPI - Money Advice Service,Find out how to claim compensation if you think you've been mis-sold payment protection insurance (PPI),https://www.moneyadviceservice.org.uk/en/articles/reclaiming-payment-protection-insurance,ppi
