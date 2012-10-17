@@ -1,6 +1,8 @@
 Need ID,Title,Text,Link,Keywords 
 2062,Internships - Graduate Talent Pool,Find an internship with a business on the Graduate Talent Pool website,http://graduatetalentpool.direct.gov.uk/,"graduate, graduates, internship, internships"
+add,Universal Credit - DWP,Universal Credit is a new single payment for people who are looking for work or on a low income - find out more from the Department for Work and Pensions (DWP),http://www.dwp.gov.uk/policy/welfare-reform/universal-credit/,universal
 add,Flood warnings - Environment Agency,Find out whether there are any flood warnings in your area,http://www.environment-agency.gov.uk/homeandleisure/floods/31618.aspx,"flood, floods, flooding, flood warning, flood warnings"
+add,Equality and Human Rights Commission (EHRC),Find out about your rights and EHRC's role in promoting and monitoring human rights,http://www.equalityhumanrights.com/human-rights/,human rights
 add,Travel advice by country - FCO,"In-depth advice for every country in the world, updated regularly for all British travellers by the Foreign & Commonwealth Office (FCO)",http://www.fco.gov.uk/en/travel-and-living-abroad/travel-advice-by-country/,"travel warning, travel advice"
 1379,Complain about a train or bus journey - FixMyTransport,Report public transport problems to the company responsible using FixMyTransport,http://www.fixmytransport.com/,"complain about public transport, train journey complaint, bus journey complaint, complain about train company, complain about train journey, complain about bus company, complain about bus journey"
 add,HM Revenue & Customs,Information and online services from HM Revenue & Customs (HMRC),http://www.hmrc.gov.uk/,"hmrc, tax, taxes"
@@ -14,8 +16,9 @@ add,NHS Choices,"Information from the National Health Service on conditions, tre
 431,Carers' assessments - NHS Choices,Find out how to get a carer's assessment,http://www.nhs.uk/CarersDirect/guide/assessments/Pages/Carersassessments.aspx,"carers assessment, carer's assessment"
 1558,Care homes - NHS Choices,Find a care home and other residential housing,http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx,"care homes, old people's homes, nursing homes, sheltered housing"
 497,Carers' rights - NHS Choices,Find out your legal rights as a carer,http://www.nhs.uk/CarersDirect/guide/rights/Pages/carers-rights.aspx,"carer's rights, carers rights, carer rights"
-add,Prescriptions and health costs - NHS Choices,Find out what you are entitled to and how to get help with health costs,http://www.nhs.uk/healthcosts,"prescription, prescriptions, hc11, health costs, dental costs, eye care, treatment"
+add,Prescriptions and health costs - NHS Choices,Find out what you are entitled to and how to get help with health costs,http://www.nhs.uk/healthcosts,"prescription, prescriptions, hc11, hc1, health costs, dental costs, eye care, eye test, eye tests, sight tests, treatment"
 1544,Counselling - NHS Choices,Find out about talking therapies and find a counsellor or another therapist in your area,http://www.nhs.uk/livewell/counselling,"counsellor, counselling"
+add,EHIC - NHS Choices,Apply for a free European Health Insurance Card (EHIC) or renew your card for emergency healthcare in Europe,http://www.nhs.uk/NHSEngland/Healthcareabroad/EHIC/Pages/about-the-ehic.aspx,"ehic, e111, european health insurance card, european health card, travel abroad, travel insurance"
 add,Health services near you - NHS Choices,"Enter your postcode or location to find a GP, hospital, dentist or other health service in your area",http://www.nhs.uk/ServiceDirectories/Pages/ServiceSearch.aspx,"doctor, gp, surgery"
 add,NHS Direct,NHS Direct provides a 24-hour nurse advice and health information telephone service on 0845 4647,http://www.nhsdirect.nhs.uk/,"nhs, health"
 998,National Savings and Investments - NS&I,Invest with the government's savings scheme on the National Savings and Investments (NS&I) website,http://www.nsandi.com/,"ns&i, nsandi, national savings and investments"
@@ -31,12 +34,13 @@ add,Victim Support,"Free and confidential help for victims of crime, witnesses, 
 add,Travelling to the United States - ESTA,British travellers to the US must register with the Electronic System for Travel Authorisation (ESTA) before their journey,https://esta.cbp.dhs.gov/,esta
 164,Careers advice - National Careers Service,Plan your career and find a careers adviser,https://nationalcareersservice.direct.gov.uk/,"careers advice, career advice, jobs advice"
 add,Courses and learning - National Careers Service,Information on learning and qualifications for work,https://nationalcareersservice.direct.gov.uk/advice/courses/,training
-1426,Write your CV - National Careers Service,Get CV writing tips and use the step-by-step CV builder,https://nationalcareersservice.direct.gov.uk/advice/getajob/cvs/,cv
+1426,Write your CV - National Careers Service,Get CV writing tips and use the step-by-step CV builder,https://nationalcareersservice.direct.gov.uk/advice/getajob/cvs/,"cv, job, jobs"
 add,Write a covering letter  - National Careers Service,Help writing a covering letter for a job application,https://nationalcareersservice.direct.gov.uk/advice/getajob/cvs/Pages/writeacoveringletter.aspx,"covering letter, cover letter, covering letters, cover letters, letter template, letter templates"
 add,Looking for a job - National Careers Service,Tips on where to look for a job and planning your job search,https://nationalcareersservice.direct.gov.uk/advice/getajob/howtofindajob/,"job, jobs"
 add,Interviews - National Careers Service,Tips on preparing for job interviews,https://nationalcareersservice.direct.gov.uk/advice/getajob/interviews/,"interview, interviews"
 add,Improving your skills - National Careers Service,Tips on how to make the most of your strengths and brush up on your skills,https://nationalcareersservice.direct.gov.uk/tools/skillshealthcheck/,"skills, skills health check"
 528,National Citizen Service - Facebook,Sign up for National Citizen Service (NCS) on Facebook,https://www.facebook.com/ncs,"ncs, national citizen service"
-add,Get a tax disc (vehicle licence),"Tax your vehicle online, by phone, post or at a Post Office, and renew your tax",https://www.gov.uk/car-tax-disc-vehicle-licence,"car tax, road tax, tax disc"
 add,GDS design principles,The Government Digital Service (GDS) has published a set of guidelines for anyone building digital services for the GOV.UK domain,https://www.gov.uk/designprinciples,"gel, global experience language, design principles"
+add,GDS style guide,The Government Digital Service (GDS) has published its style guide for written content on the GOV.UK website,https://www.gov.uk/designprinciples/styleguide,"style guide, style guidelines, content principles, editorial guidelines"
+add,GOV.UK APIs,How developers can use GOV.UK's content and data through APIs (application programming interfaces),https://www.gov.uk/support/apis,"api, apis"
 add,Money Advice Service,"Free, unbiased, independent advice and tools to help you manage your money better",https://www.moneyadviceservice.org.uk/,"money advice, financial advice, finances, ma, mas"
