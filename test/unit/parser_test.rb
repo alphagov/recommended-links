@@ -36,6 +36,7 @@ module RecommendedLinks
       assert_equal "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx", recommended_links.first.url
       assert_equal "recommended-link", recommended_links.first.format
       assert_equal ["care homes", "old people's homes", "nursing homes", "sheltered housing"], recommended_links.first.match_phrases
+      assert_equal "This is a section", recommended_links.first.section
     end
 
     test "Can parse a CSV file with UTF8 characters" do
@@ -58,6 +59,5 @@ module RecommendedLinks
     test "Can parse the included data file" do
       recommended_links = Parser.new(csv_real_file, "recommended-link").links
     end
-
   end
 end

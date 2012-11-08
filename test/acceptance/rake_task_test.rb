@@ -6,12 +6,12 @@ module RecommendedLinks
     test "rake rummager:index parses" do
       indexer = stub_everything("Indexer")
 
-      recommended_link = RecommendedLink.new(
+      expected_recommended_link = RecommendedLink.new(
         "Care homes",
         "Find a care home and other residential housing on the NHS Choices website",
         "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx",
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
-        "recommended-link"
+        "recommended-link", "This is a section"
       )
       indexer.expects(:index).with([recommended_link])
       indexer.expects(:remove).with(["http://delete.me/some/page.html"])
