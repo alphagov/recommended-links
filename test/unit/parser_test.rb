@@ -58,5 +58,14 @@ module RecommendedLinks
       recommended_links = Parser.new(csv_real_file).links
     end
 
+    test "Can handle trailing spaces in header row" do
+      recommended_links = Parser.new(fixture_file("edge_cases/trailing_spaces_in_header.csv")).links
+
+      assert_equal 1, recommended_links.size
+      assert_equal "Care homes", recommended_links.first.title
+      assert_equal "Find a care home and other residential housing on the NHS Choices website", recommended_links.first.description
+      assert_equal "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx", recommended_links.first.url
+      assert_equal ["care homes", "old people's homes", "nursing homes", "sheltered housing"], recommended_links.first.match_phrases
+    end
   end
 end

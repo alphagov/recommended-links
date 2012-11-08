@@ -17,7 +17,7 @@ module RecommendedLinks
         if @headers
           parse_row Hash[@headers.zip(row)]
         else
-          @headers = row.map(&:downcase)
+          @headers = row.map(&:downcase).map(&:strip)
         end
       end
       @links
