@@ -20,9 +20,10 @@ module RecommendedLinks
       {
         "title" => recommended_link.title,
         "description" => recommended_link.description,
-        "format" => "recommended-link",
+        "format" => recommended_link.format,
         "link" => recommended_link.url,
-        "indexable_content" => recommended_link.match_phrases.join(", ")
+        "indexable_content" => recommended_link.match_phrases.join(", "),
+        "section" => recommended_link.section
       }
     end
 

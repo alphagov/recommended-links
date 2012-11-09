@@ -3,8 +3,9 @@ require 'csv'
 
 module RecommendedLinks
   class Parser
-    def initialize(filename)
+    def initialize(filename, type)
       @filename = filename
+      @type = type
       @headers = nil
       @links = nil
     end
@@ -27,7 +28,8 @@ module RecommendedLinks
     def parse_row(h)
       @links << RecommendedLink.new(
         h["title"], h["text"], h["link"],
-        parse_match_phrases(h["keywords"])
+        parse_match_phrases(h["keywords"]),
+        @type, h["section"]
       )
     end
 
@@ -41,6 +43,10 @@ module RecommendedLinks
   end
 
   class DeletedLinksParser < Parser
+    def initialize(filename)
+      super(filename, nil)
+    end
+
     def parse_row(h)
       @links << h["link"]
     end
