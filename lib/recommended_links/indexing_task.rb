@@ -12,8 +12,12 @@ module RecommendedLinks
       recommended_links = []
       deleted_links = []
 
-      Dir[File.join(data_path, "index", "*.csv")].each do |f|
-        recommended_links += RecommendedLinks::Parser.new(f).links
+      recommended_link_types = Dir.glob(File.join(data_path, "index", "**")).select { |f| File.directory?(f) }
+      recommended_link_types.each do |path|
+        type = path.split("/")[-1]
+        Dir[File.join(path, "*.csv")].each do |f|
+          recommended_links += RecommendedLinks::Parser.new(f, type).links
+        end
       end
 
       Dir[File.join(data_path, "remove", "*.csv")].each do |f|
