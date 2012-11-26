@@ -29,7 +29,7 @@ module RecommendedLinks
       @links << RecommendedLink.new(
         h["title"], h["text"], h["link"],
         parse_match_phrases(h["keywords"]),
-        @type, h["section"]
+        @type, h["section"], h["search index"]
       )
     end
 

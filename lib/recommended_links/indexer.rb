@@ -12,19 +12,15 @@ module RecommendedLinks
 
     def index(recommended_links)
       @logger.info "Indexing #{recommended_links.size} links..."
-      Rummageable.index(recommended_links.map { |l| for_indexing(l) })
-      @logger.info "Recommended links indexed"
-    end
+      recommended_links.each do |link|
+        if link.search_index.nil?
+          Rummageable.index(link.to_index)
+        else
+          Rummageable.index(link.to_index, link.search_index)
+        end
+      end
 
-    def for_indexing(recommended_link)
-      {
-        "title" => recommended_link.title,
-        "description" => recommended_link.description,
-        "format" => recommended_link.format,
-        "link" => recommended_link.url,
-        "indexable_content" => recommended_link.match_phrases.join(", "),
-        "section" => recommended_link.section
-      }
+      @logger.info "Recommended links indexed"
     end
 
     def remove(deleted_links)
