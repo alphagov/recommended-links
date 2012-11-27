@@ -10,13 +10,21 @@ module RecommendedLinks
       @logger = logger
     end
 
+    def DEFAULT_ALIAS
+      "DEFAULT_INDEX"
+    end
+
     def index(recommended_links)
       @logger.info "Indexing #{recommended_links.size} links..."
+      to_index = {}
       recommended_links.each do |link|
-        if link.search_index.nil?
-          Rummageable.index(link.to_index)
+        (to_index[link.search_index || self.DEFAULT_ALIAS] ||= []) << link
+      end
+      to_index.each do |index, links|
+        if index == self.DEFAULT_ALIAS
+          Rummageable.index(links.map { |l| l.to_index })
         else
-          Rummageable.index(link.to_index, "/#{link.search_index}")
+          Rummageable.index(links.map { |l| l.to_index }, "/#{index}")
         end
       end
 

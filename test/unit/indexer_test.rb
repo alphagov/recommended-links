@@ -12,15 +12,14 @@ module RecommendedLinks
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
         "recommended-link", "Business"
       )
-      Rummageable.expects(:index).with({
+      Rummageable.expects(:index).with([{
           "title" => recommended_link.title,
           "description" => recommended_link.description,
           "format" => recommended_link.format,
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
           "section" => recommended_link.section
-        }
-      )
+        }])
 
       Indexer.new.index([recommended_link])
     end
@@ -31,8 +30,7 @@ module RecommendedLinks
         RecommendedLink.new("Second","","",[])
       ]
 
-      Rummageable.expects(:index).with(recommended_links[0].to_index)
-      Rummageable.expects(:index).with(recommended_links[1].to_index)
+      Rummageable.expects(:index).with(recommended_links.map { |l| l.to_index })
 
       Indexer.new.index(recommended_links)
     end
@@ -56,14 +54,14 @@ module RecommendedLinks
         "recommended-link", "Business", "test-index"
       )
 
-      Rummageable.expects(:index).with({
+      Rummageable.expects(:index).with([{
           "title" => recommended_link.title,
           "description" => recommended_link.description,
           "format" => recommended_link.format,
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
           "section" => recommended_link.section
-        }, '/test-index')
+        }], '/test-index')
 
       Indexer.new.index([recommended_link])
     end
