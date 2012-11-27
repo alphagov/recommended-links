@@ -53,7 +53,7 @@ module RecommendedLinks
     test "Can parse a deleted links file" do
       deleted_links = DeletedLinksParser.new(deleted_links_fixture_file).links
 
-      assert_equal ['http://delete.me/some/page.html'], deleted_links
+      assert_equal 'http://delete.me/some/page.html', deleted_links.first.url
     end
 
     test "Can parse the included data file" do
