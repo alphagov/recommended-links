@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rummageable', "~> 0.1.3"
+gem 'rummageable', "0.6.1"
 gem 'rake', '0.9.2'
 
 group :test do
