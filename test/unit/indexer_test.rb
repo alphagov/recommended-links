@@ -63,7 +63,7 @@ module RecommendedLinks
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
           "section" => recommended_link.section
-        }, 'test-index')
+        }, '/test-index')
 
       Indexer.new.index([recommended_link])
     end

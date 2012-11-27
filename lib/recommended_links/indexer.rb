@@ -16,7 +16,7 @@ module RecommendedLinks
         if link.search_index.nil?
           Rummageable.index(link.to_index)
         else
-          Rummageable.index(link.to_index, link.search_index)
+          Rummageable.index(link.to_index, "/#{link.search_index}")
         end
       end
 
