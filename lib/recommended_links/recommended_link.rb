@@ -1,3 +1,17 @@
 module RecommendedLinks
-  RecommendedLink = Struct.new(:title, :description, :url, :match_phrases, :format, :section)
+  class RecommendedLink < Struct.new(:title, :description, :url, :match_phrases, :format, :section, :search_index)
+    def to_index
+      {
+        "title"             => title,
+        "description"       => description,
+        "format"            => format,
+        "link"              => url,
+        "indexable_content" => match_phrases.join(", "),
+        "section"           => section
+      }
+    end
+  end
+
+  class DeletedLink < Struct.new(:url, :search_index)
+  end
 end

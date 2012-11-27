@@ -13,8 +13,11 @@ module RecommendedLinks
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
         "recommended-link", "This is a section"
       )
+      expected_deleted_link = DeletedLink.new(
+        "http://delete.me/some/page.html"
+      )
       indexer.expects(:index).with([expected_recommended_link])
-      indexer.expects(:remove).with(["http://delete.me/some/page.html"])
+      indexer.expects(:remove).with([expected_deleted_link])
 
       data_path = File.expand_path("../../fixtures/data", __FILE__)
       IndexingTask.new(data_path).run(indexer)
