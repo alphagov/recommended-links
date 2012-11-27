@@ -11,4 +11,7 @@ module RecommendedLinks
       }
     end
   end
+
+  class DeletedLink < Struct.new(:url, :search_index)
+  end
 end

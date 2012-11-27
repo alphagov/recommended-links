@@ -38,11 +38,11 @@ module RecommendedLinks
     end
 
     test "Can remove links" do
-      deleted = ["http://delete.me/1", "http://delete.me/2"]
+      deleted = [DeletedLink.new("http://delete.me/1"), DeletedLink.new("http://delete.me/2")]
 
       s = sequence('deletion')
-      Rummageable.expects(:delete).with(deleted[0]).in_sequence(s)
-      Rummageable.expects(:delete).with(deleted[1]).in_sequence(s)
+      Rummageable.expects(:delete).with("http://delete.me/1").in_sequence(s)
+      Rummageable.expects(:delete).with("http://delete.me/2").in_sequence(s)
 
       Indexer.new.remove(deleted)
     end
@@ -66,6 +66,16 @@ module RecommendedLinks
         }, '/test-index')
 
       Indexer.new.index([recommended_link])
+    end
+
+    test "Can remove links from different indexes" do
+      deleted_link = DeletedLink.new(
+        "http://example.com/delete-me",
+        "test-index"
+        )
+      Rummageable.expects(:delete).with("http://example.com/delete-me", '/test-index')
+
+      Indexer.new.remove([deleted_link])
     end
 
   end

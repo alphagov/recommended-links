@@ -48,7 +48,9 @@ module RecommendedLinks
     end
 
     def parse_row(h)
-      @links << h["link"]
+      @links << DeletedLink.new(
+        h["link"], h["search index"]
+      )
     end
   end
 end

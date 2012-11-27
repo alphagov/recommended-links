@@ -26,7 +26,11 @@ module RecommendedLinks
     def remove(deleted_links)
       @logger.info "Deleting #{deleted_links.size} links..."
       deleted_links.each do |deleted_link|
-        Rummageable.delete(deleted_link)
+        if deleted_link.search_index.nil?
+          Rummageable.delete(deleted_link.url)
+        else
+          Rummageable.delete(deleted_link.url, "/#{deleted_link.search_index}")
+        end
       end
       @logger.info "Links deleted"
     end
