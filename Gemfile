@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'plek', '1.3.1'
 gem 'rummageable', "0.6.1"
 gem 'rake', '0.9.2'
 
