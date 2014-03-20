@@ -5,6 +5,7 @@ module RecommendedLinks
   class RakeTaskTest < Test::Unit::TestCase
     test "rake rummager:index parses" do
       indexer = stub_everything("Indexer")
+      external_link_registerer = stub_everything("ExternalLinkRegisterer")
 
       expected_recommended_link = RecommendedLink.new(
         "Care homes",
@@ -18,9 +19,13 @@ module RecommendedLinks
       )
       indexer.expects(:index).with([expected_recommended_link])
       indexer.expects(:remove).with([expected_deleted_link])
+      external_link_registerer.expects(:register_links)
+                              .with([expected_recommended_link])
 
       data_path = File.expand_path("../../fixtures/data", __FILE__)
-      IndexingTask.new(data_path, indexer: indexer).run
+      IndexingTask.new(data_path,
+                       indexer: indexer,
+                       external_link_registerer: external_link_registerer).run
     end
 
     def teardown
