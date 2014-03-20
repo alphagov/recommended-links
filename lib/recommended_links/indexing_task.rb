@@ -3,13 +3,14 @@ require_relative "./parser"
 
 module RecommendedLinks
   class IndexingTask
-    attr_reader :data_path
+    attr_reader :data_path, :indexer
 
-    def initialize(data_path)
+    def initialize(data_path, options = {})
       @data_path = data_path
+      @indexer = options.fetch(:indexer, RecommendedLinks::Indexer.new)
     end
 
-    def run(indexer = RecommendedLinks::Indexer.new)
+    def run
       indexer.index(recommended_links)
       indexer.remove(deleted_links)
     end

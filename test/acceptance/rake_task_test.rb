@@ -20,7 +20,7 @@ module RecommendedLinks
       indexer.expects(:remove).with([expected_deleted_link])
 
       data_path = File.expand_path("../../fixtures/data", __FILE__)
-      IndexingTask.new(data_path).run(indexer)
+      IndexingTask.new(data_path, indexer: indexer).run
     end
 
     def teardown
