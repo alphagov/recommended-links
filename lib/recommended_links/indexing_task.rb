@@ -8,14 +8,19 @@ module RecommendedLinks
 
     def initialize(data_path, options = {})
       @data_path = data_path
-      @indexer = options.fetch(:indexer, RecommendedLinks::Indexer.new)
-      @external_link_registerer = options.fetch(:external_link_registerer, RecommendedLinks::ExternalLinkRegisterer.new)
+      @indexer = options[:indexer]
+      @external_link_registerer = options[:external_link_registerer]
     end
 
     def run
-      indexer.index(recommended_links)
-      indexer.remove(deleted_links)
-      external_link_registerer.register_links(recommended_links)
+      if indexer
+        indexer.index(recommended_links)
+        indexer.remove(deleted_links)
+      end
+
+      if external_link_registerer
+        external_link_registerer.register_links(recommended_links)
+      end
     end
 
   private
