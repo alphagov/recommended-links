@@ -2,6 +2,7 @@ require 'rake'
 require 'rake/testtask'
 
 load "lib/tasks/index.rake"
+load "lib/tasks/deploy_links.rake"
 task :default => [:test]
 
 desc "Run all tests"
