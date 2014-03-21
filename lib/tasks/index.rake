@@ -10,6 +10,6 @@ namespace :rummager do
     end
     data_path = File.expand_path("../../data", File.dirname(__FILE__))
     indexer = RecommendedLinks::Indexer.new(logger)
-    RecommendedLinks::IndexingTask.new(data_path).run(indexer)
+    RecommendedLinks::IndexingTask.new(data_path, indexer: indexer).run
   end
 end
