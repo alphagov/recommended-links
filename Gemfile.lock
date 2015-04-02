@@ -9,7 +9,7 @@ GEM
       null_logger
       plek
       rest-client (~> 1.6.3)
-    json (1.7.5)
+    json (1.8.1)
     link_header (0.0.8)
     lrucache (0.1.4)
       PriorityQueue (~> 0.1.2)
