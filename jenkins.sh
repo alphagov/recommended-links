@@ -1,4 +1,5 @@
-#!/bin/bash -x
+#!/bin/bash
+set -ex
 
 bundle install --path "${HOME}/bundles/${JOB_NAME}" --without development
 
