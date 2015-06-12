@@ -12,7 +12,9 @@ module RecommendedLinks
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
         "recommended-link", "Business"
       )
-      Rummageable.expects(:index).with([{
+      stub_index = stub("Rummageable::Index")
+      Rummageable::Index.expects(:new).returns(stub_index)
+      stub_index.expects(:add_batch).with([{
           "title" => recommended_link.title,
           "description" => recommended_link.description,
           "format" => recommended_link.format,
@@ -30,7 +32,9 @@ module RecommendedLinks
         RecommendedLink.new("Second","","",[])
       ]
 
-      Rummageable.expects(:index).with(recommended_links.map { |l| l.to_index })
+      stub_index = stub("Rummageable::Index")
+      Rummageable::Index.expects(:new).returns(stub_index)
+      stub_index.expects(:add_batch).with(recommended_links.map { |l| l.to_index })
 
       Indexer.new.index(recommended_links)
     end
@@ -39,8 +43,10 @@ module RecommendedLinks
       deleted = [DeletedLink.new("http://delete.me/1"), DeletedLink.new("http://delete.me/2")]
 
       s = sequence('deletion')
-      Rummageable.expects(:delete).with("http://delete.me/1").in_sequence(s)
-      Rummageable.expects(:delete).with("http://delete.me/2").in_sequence(s)
+      stub_index = stub("Rummageable::Index")
+      Rummageable::Index.expects(:new).with('http://rummager.dev.gov.uk', '/mainstream').returns(stub_index)
+      stub_index.expects(:delete).with("http://delete.me/1").in_sequence(s)
+      stub_index.expects(:delete).with("http://delete.me/2").in_sequence(s)
 
       Indexer.new.remove(deleted)
     end
@@ -54,14 +60,16 @@ module RecommendedLinks
         "recommended-link", "Business", "test-index"
       )
 
-      Rummageable.expects(:index).with([{
+      stub_index = stub("Rummageable::Index")
+      Rummageable::Index.expects(:new).with('http://rummager.dev.gov.uk', '/test-index').returns(stub_index)
+      stub_index.expects(:add_batch).with([{
           "title" => recommended_link.title,
           "description" => recommended_link.description,
           "format" => recommended_link.format,
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
           "section" => recommended_link.section
-        }], '/test-index')
+        }])
 
       Indexer.new.index([recommended_link])
     end
@@ -71,7 +79,10 @@ module RecommendedLinks
         "http://example.com/delete-me",
         "test-index"
         )
-      Rummageable.expects(:delete).with("http://example.com/delete-me", '/test-index')
+
+      stub_index = stub("Rummageable::Index")
+      Rummageable::Index.expects(:new).with('http://rummager.dev.gov.uk', '/test-index').returns(stub_index)
+      stub_index.expects(:delete).with("http://example.com/delete-me")
 
       Indexer.new.remove([deleted_link])
     end
