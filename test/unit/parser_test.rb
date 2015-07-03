@@ -57,7 +57,7 @@ module RecommendedLinks
     end
 
     test "Can parse the included data file" do
-      recommended_links = Parser.new(csv_real_file, "recommended-link").links
+      Parser.new(csv_real_file, "recommended-link").links
     end
 
     test "Can handle trailing spaces in header row" do
