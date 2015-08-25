@@ -12,7 +12,7 @@ module RecommendedLinks
         "Find a care home and other residential housing on the NHS Choices website",
         "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx",
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
-        "recommended-link", "This is a section"
+        "recommended-link",
       )
       expected_deleted_link = DeletedLink.new(
         "http://delete.me/some/page.html"

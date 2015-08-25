@@ -20,7 +20,6 @@ module RecommendedLinks
           "format" => recommended_link.format,
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
-          "section" => recommended_link.section
         }])
 
       Indexer.new.index([recommended_link])
@@ -57,7 +56,7 @@ module RecommendedLinks
         "Find a care home and other residential housing on the NHS Choices website",
         "http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx",
         ["care homes", "old people's homes", "nursing homes", "sheltered housing"],
-        "recommended-link", "Business", "test-index"
+        "recommended-link", "test-index"
       )
 
       stub_index = stub("Rummageable::Index")
@@ -68,7 +67,6 @@ module RecommendedLinks
           "format" => recommended_link.format,
           "link" => recommended_link.url,
           "indexable_content" => recommended_link.match_phrases.join(", "),
-          "section" => recommended_link.section
         }])
 
       Indexer.new.index([recommended_link])
