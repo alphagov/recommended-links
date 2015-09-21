@@ -13,13 +13,10 @@ namespace :test do
   Rake::TestTask.new("units") { |t|
     t.pattern = 'test/unit/*_test.rb'
     t.verbose = true
-    t.warning = true
   }
 
   Rake::TestTask.new("acceptance") { |t|
     t.pattern = 'test/acceptance/*_test.rb'
     t.verbose = true
-    t.warning = true
   }
 end
-
