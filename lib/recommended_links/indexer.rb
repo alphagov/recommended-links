@@ -1,5 +1,6 @@
 require_relative "recommended_link"
 require "logger"
+require "plek"
 require "rummageable"
 
 DUMMY_LOGGER = Logger.new("/dev/null")
