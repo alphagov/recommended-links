@@ -1,25 +1,19 @@
 require_relative "./indexer"
 require_relative "./parser"
-require_relative "./external_link_registerer"
 
 module RecommendedLinks
   class IndexingTask
-    attr_reader :data_path, :indexer, :external_link_registerer
+    attr_reader :data_path, :indexer
 
     def initialize(data_path, options = {})
       @data_path = data_path
       @indexer = options[:indexer]
-      @external_link_registerer = options[:external_link_registerer]
     end
 
     def run
       if indexer
         indexer.index(recommended_links)
         indexer.remove(deleted_links)
-      end
-
-      if external_link_registerer
-        external_link_registerer.register_links(recommended_links)
       end
     end
 
