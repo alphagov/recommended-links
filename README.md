@@ -9,18 +9,9 @@ be part of the single domain.
 For this content, we'll detect searches for particular terms and show a
 recommended link at the top of the search results.
 
-Example:
+Example: Search for: [care homes](https://www.gov.uk/search?q=care+homes)
 
-Search for: care homes
-
-Results
-=======
-
-Care homes
-----------
-Find a care home and other residential housing on the NHS Choices website
-  -> http://www.nhs.uk/CarersDirect/guide/practicalsupport/Pages/Carehomes.aspx
-
+![Search for "Care Home"](doc/care-home-search.png)
 
 Surfacing recommended links in Rummager
 =======================================
